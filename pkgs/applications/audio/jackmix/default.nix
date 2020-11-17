@@ -1,13 +1,17 @@
 { stdenv, fetchurl, pkgconfig, sconsPackages, qt4, lash, libjack2, jack ? libjack2, alsaLib }:
 
-stdenv.mkDerivation {
+let
   pname = "jackmix";
+
   version = "0.5.2";
 
   src = fetchurl {
     url = "https://github.com/kampfschlaefer/jackmix/archive/v${version}.tar.gz";
     sha256 = "18f5v7g66mgarhs476frvayhch7fy4nyjf2xivixc061ipn0m82j";
   };
+in
+stdenv.mkDerivation {
+  inherit pname version src;
 
   patches = [ ./no_error.patch ];
 
