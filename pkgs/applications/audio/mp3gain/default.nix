@@ -1,6 +1,6 @@
 { stdenv, fetchurl, unzip, mpg123 }:
 
-stdenv.mkDerivation {
+let
   pname = "mp3gain";
   version = "1.6.2";
 
@@ -8,6 +8,10 @@ stdenv.mkDerivation {
     url = "mirror://sourceforge/mp3gain/${pname}-${builtins.replaceStrings ["."] ["_"] version}-src.zip";
     sha256 = "0varr6y7k8zarr56b42r0ad9g3brhn5vv3xjg1c0v19jxwr4gh2w";
   };
+in
+
+stdenv.mkDerivation {
+  inherit pname version src;
 
   buildInputs = [ unzip mpg123 ];
 
