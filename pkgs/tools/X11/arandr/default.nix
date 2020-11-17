@@ -7,12 +7,12 @@ let
   inherit (python3Packages) buildPythonApplication docutils pygobject3;
   pname = "arandr";
   version = "0.1.10";
-  name = "${pname}-${version}";
+
 in buildPythonApplication rec {
   inherit pname version;
 
   src = fetchurl {
-    url = "https://christian.amsuess.com/tools/arandr/files/${name}.tar.gz";
+    url = "https://christian.amsuess.com/tools/arandr/files/${pname}-${version}.tar.gz";
     sha256 = "135q0llvm077jil2fr92ssw3p095m4r8jfj0lc5rr3m71n4srj6v";
   };
 

@@ -2,11 +2,11 @@
   pulseaudio }:
 
 bitwig-studio1.overrideAttrs (oldAttrs: rec {
-  name = "bitwig-studio-${version}";
+  pname = "bitwig-studio";
   version = "2.5";
 
   src = fetchurl {
-    url    = "https://downloads.bitwig.com/stable/${version}/bitwig-studio-${version}.deb";
+    url    = "https://downloads.bitwig.com/stable/${version}/${pname}-${version}.deb";
     sha256 = "1zkiz36lhck3qvl0cp0dq6pwbv4lx4sh9wh0ga92kx5zhvbjm098";
   };
 

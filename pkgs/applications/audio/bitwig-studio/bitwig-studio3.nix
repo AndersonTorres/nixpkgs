@@ -1,11 +1,11 @@
 { fetchurl, bitwig-studio1, pulseaudio, xorg }:
 
 bitwig-studio1.overrideAttrs (oldAttrs: rec {
-  name = "bitwig-studio-${version}";
+  pname = "bitwig-studio";
   version = "3.2.7";
 
   src = fetchurl {
-    url = "https://downloads.bitwig.com/stable/${version}/bitwig-studio-${version}.deb";
+    url = "https://downloads.bitwig.com/stable/${version}/${pname}-${version}.deb";
     sha256 = "1mj9kii4bnk5w2p18hypwy8swkpzkaqw98q5fsjq362x4qm0b3py";
   };
 

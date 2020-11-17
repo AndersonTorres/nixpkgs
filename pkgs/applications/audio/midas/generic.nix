@@ -1,8 +1,9 @@
 { stdenv, fetchurl, lib, libX11, libXext, alsaLib, freetype, brand, type, version, homepage, sha256, ... }:
+
 stdenv.mkDerivation rec {
-  inherit type;
+  inherit type version;
   baseName = "${type}-Edit";
-  name = "${lib.toLower baseName}-${version}";
+  pname = "${lib.toLower baseName}";
 
   src = fetchurl {
     url = "http://downloads.music-group.com/software/behringer/${type}/${type}-Edit_LINUX_64bit_${version}.tar.gz";

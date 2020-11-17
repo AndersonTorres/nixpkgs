@@ -15,7 +15,7 @@ mkDerivation rec {
     # yet been made so change this back to the proper upstream when such a
     # release is out
     url    = "https://invent.kde.org/multimedia/amarok.git";
-    # url = "mirror://kde/stable/${pname}/${version}/src/${name}.tar.xz";
+    # url = "mirror://kde/stable/${pname}/${version}/src/${pname}-${version}.tar.xz";
     rev    = "fece39b0e81db310b6a6e08f93d83b0d498cd02b";
     sha256 = "12casnq6w5yp2jlvnr466pjpkn0vriry8jzfq2qkjl564y0vhy9x";
   };

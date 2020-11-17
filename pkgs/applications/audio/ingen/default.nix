@@ -7,7 +7,6 @@
 stdenv.mkDerivation  rec {
   pname = "ingen";
   version = "unstable-2019-12-09";
-  name = "${pname}-${version}";
 
   src = fetchgit {
     url = "https://gitlab.com/drobilla/ingen.git";

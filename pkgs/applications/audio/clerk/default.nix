@@ -2,11 +2,12 @@
 utillinux, pythonPackages, libnotify }:
 
 stdenv.mkDerivation {
-  name = "clerk-2016-10-14";
+  pname = "clerk";
+  version = "2016-10-14";
 
   src = fetchFromGitHub {
     owner = "carnager";
-    repo = "clerk";
+    repo = pname;
     rev = "875963bcae095ac1db174627183c76ebe165f787";
     sha256 = "0y045my65hr3hjyx13jrnyg6g3wb41phqb1m7azc4l6vx6r4124b";
   };

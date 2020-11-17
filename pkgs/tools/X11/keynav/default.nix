@@ -3,11 +3,12 @@
 
 let release = "20180821"; in
 stdenv.mkDerivation {
-  name = "keynav-0.${release}.0";
+  pname = "keynav";
+  version = "0.${release}.0";
 
   src = fetchFromGitHub {
     owner = "jordansissel";
-    repo = "keynav";
+    repo = pname;
     rev = "78f9e076a5618aba43b030fbb9344c415c30c1e5";
     sha256 = "0hmc14fj612z5h7gjgk95zyqab3p35c4a99snnblzxfg0p3x2f1d";
   };

@@ -3,14 +3,14 @@
 
 let
   version = "0.9.10";
-  name = "meters.lv2-${version}";
+  pname = "meters.lv2";
 
   # robtk submodule is pegged to this version
   robtkVersion = "0.6.2";
   robtkName = "robtk-${robtkVersion}";
 
   src = fetchurl {
-    name = "${name}.tar.gz";
+    name = "${pname}-${version}.tar.gz";
     url = "https://github.com/x42/meters.lv2/archive/v${version}.tar.gz";
     sha256 = "0yfyn7j8g50w671b1z7ph4ppjx8ddj5c6nx53syp5y5mfr1b94nx";
   };
@@ -23,15 +23,15 @@ let
 
 in
 stdenv.mkDerivation {
-  inherit name;
+  inherit pname version;
 
   nativeBuildInputs = [ pkgconfig ];
   buildInputs = [ lv2 libGLU libGL gtk2 cairo pango fftwFloat libjack2 ];
 
   srcs = [ src robtkSrc ];
-  sourceRoot = name;
+  sourceRoot = "${pname}-${version}";
 
-  postUnpack = "mv ${robtkName}/* ${name}/robtk"; # */
+  postUnpack = "mv ${robtkName}/* ${pname}-${version}/robtk"; # */
 
   preConfigure = "makeFlagsArray=( PREFIX=$out )";
   meter_VERSION = version;

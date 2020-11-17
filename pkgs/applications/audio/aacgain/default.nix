@@ -1,11 +1,12 @@
 { stdenv, fetchFromGitHub, fetchpatch }:
 
-stdenv.mkDerivation {
-  name = "aacgain-1.9.0";
+stdenv.mkDerivation rec {
+  pname = "aacgain";
+  version = "1.9.0";
 
   src = fetchFromGitHub {
     owner = "mulx";
-    repo = "aacgain";
+    repo = pname;
     rev = "7c29dccd878ade1301710959aeebe87a8f0828f5";
     sha256 = "07hl432vsscqg01b6wr99qmsj4gbx0i02x4k565432y6zpfmaxm0";
   };

@@ -41,11 +41,11 @@ let
   perl' = perl.withPackages (ppkgs: [ ppkgs.URI ]);
 
 in mkDerivation {
-  name = "${pname}-${version}";
-
+  inherit pname version;
+  
   src = fetchFromGitHub {
     owner  = "CDrummond";
-    repo   = "cantata";
+    repo   = pname;
     rev    = "v${version}";
     sha256 = "15qfx9bpfdplxxs08inwf2j8kvf7g5cln5sv1wj1l2l41vbf1mjr";
   };

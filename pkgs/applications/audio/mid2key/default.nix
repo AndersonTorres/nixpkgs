@@ -1,10 +1,11 @@
 { stdenv, fetchurl, alsaLib, libX11, libXi, libXtst, xorgproto }:
 
 stdenv.mkDerivation rec {
-  name = "mid2key-r1";
+  pname = "mid2key";
+  version = "r1".
 
   src = fetchurl {
-    url = "http://mid2key.googlecode.com/files/${name}.tar.gz";
+    url = "http://mid2key.googlecode.com/files/${pname}-${version}.tar.gz";
     sha256 = "0j2vsjvdgx51nd1qmaa18mcy0yw9pwrhbv2mdwnf913bwsk4y904";
   };
 

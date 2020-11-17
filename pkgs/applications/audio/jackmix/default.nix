@@ -1,9 +1,11 @@
 { stdenv, fetchurl, pkgconfig, sconsPackages, qt4, lash, libjack2, jack ? libjack2, alsaLib }:
 
 stdenv.mkDerivation {
-  name = "jackmix-0.5.2";
+  pname = "jackmix";
+  version = "0.5.2";
+
   src = fetchurl {
-    url = "https://github.com/kampfschlaefer/jackmix/archive/v0.5.2.tar.gz";
+    url = "https://github.com/kampfschlaefer/jackmix/archive/v${version}.tar.gz";
     sha256 = "18f5v7g66mgarhs476frvayhch7fy4nyjf2xivixc061ipn0m82j";
   };
 

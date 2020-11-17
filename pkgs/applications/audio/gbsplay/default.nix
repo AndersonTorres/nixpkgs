@@ -1,7 +1,8 @@
 { stdenv, fetchFromGitHub, libpulseaudio }:
 
 stdenv.mkDerivation {
-  name = "gbsplay-2016-12-17";
+  name = "gbsplay";
+  version = "2016-12-17";
 
   src = fetchFromGitHub {
     owner = "mmitch";

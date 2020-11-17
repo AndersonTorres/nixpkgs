@@ -2,7 +2,8 @@
 , libaudclient }:
 
 stdenv.mkDerivation {
-  name = "gjay-0.3.2";
+  name = "gjay";
+  version = "0.3.2";
 
   src = fetchurl {
     url = "mirror://sourceforge/project/gjay/gjay-0.3.2.tar.gz";

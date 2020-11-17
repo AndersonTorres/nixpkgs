@@ -20,7 +20,7 @@ in
 with versionMap.${version};
 
 stdenv.mkDerivation  {
-  name = "fluidsynth-${fluidsynthVersion}";
+  pname = "fluidsynth";
   version = fluidsynthVersion;
 
   src = fetchFromGitHub {
