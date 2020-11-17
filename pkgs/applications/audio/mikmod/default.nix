@@ -1,7 +1,7 @@
 { stdenv, fetchurl, libmikmod, ncurses }:
 
 stdenv.mkDerivation rec {
-  name = "mikmod";
+  pname = "mikmod";
   version = "3.2.8";
 
   src = fetchurl {
