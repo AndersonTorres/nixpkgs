@@ -1,7 +1,7 @@
 { stdenv, fetchurl, libX11, libXext, libXi, libXmu, libXt, libXtst }:
 
 stdenv.mkDerivation rec {
-  name = "imwheel";
+  pname = "imwheel";
   version = "1.0.0pre12";
 
   src = fetchurl {
