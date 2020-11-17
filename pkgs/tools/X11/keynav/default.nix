@@ -1,9 +1,11 @@
 { stdenv, fetchFromGitHub, pkgconfig, libX11, xorgproto, libXtst, libXi, libXext
 , libXinerama, libXrandr, glib, cairo, xdotool }:
 
-let release = "20180821"; in
-stdenv.mkDerivation {
+let
+  release = "20180821";
+
   pname = "keynav";
+
   version = "0.${release}.0";
 
   src = fetchFromGitHub {
@@ -12,6 +14,10 @@ stdenv.mkDerivation {
     rev = "78f9e076a5618aba43b030fbb9344c415c30c1e5";
     sha256 = "0hmc14fj612z5h7gjgk95zyqab3p35c4a99snnblzxfg0p3x2f1d";
   };
+in
+
+stdenv.mkDerivation {
+  inherit pname version src;
 
   nativeBuildInputs = [ pkgconfig ];
   buildInputs = [ libX11 xorgproto libXtst libXi libXext libXinerama libXrandr
