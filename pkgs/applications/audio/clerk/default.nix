@@ -1,8 +1,9 @@
 { stdenv, fetchFromGitHub, makeWrapper, rofi, mpc_cli, perl,
 utillinux, pythonPackages, libnotify }:
 
-stdenv.mkDerivation {
+let
   pname = "clerk";
+
   version = "2016-10-14";
 
   src = fetchFromGitHub {
@@ -11,6 +12,10 @@ stdenv.mkDerivation {
     rev = "875963bcae095ac1db174627183c76ebe165f787";
     sha256 = "0y045my65hr3hjyx13jrnyg6g3wb41phqb1m7azc4l6vx6r4124b";
   };
+in
+
+stdenv.mkDerivation {
+  inherit pname version src;
 
   buildInputs = [ makeWrapper pythonPackages.mpd2 ];
 
