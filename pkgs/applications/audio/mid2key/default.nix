@@ -2,7 +2,7 @@
 
 stdenv.mkDerivation rec {
   pname = "mid2key";
-  version = "r1".
+  version = "r1";
 
   src = fetchurl {
     url = "http://mid2key.googlecode.com/files/${pname}-${version}.tar.gz";
