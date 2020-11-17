@@ -2,7 +2,7 @@
 
 stdenv.mkDerivation rec {
   pname = "espeakedit";
-  version = "1.48.03"
+  version = "1.48.03";
 
   src = fetchurl {
     url = "mirror://sourceforge/espeak/${pname}-${version}.zip";
